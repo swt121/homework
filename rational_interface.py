@@ -29,7 +29,7 @@ class Interface:
 
         self.operation_label = tk.Label(root, text="Операция")
         self.operation_label.grid(row=1, column=1)
-        self.operation_combobox = ttk.Combobox(root, values=["+", "-", "*", "/"])
+        self.operation_combobox = ttk.Combobox(root, values=["+", "-", "*", "/"],state='readonly')
         self.operation_combobox.grid(row=2, column=1)
 
         self.calculate_button = tk.Button(root, text="Вычислить", command=self.calculate)
