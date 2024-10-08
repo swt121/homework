@@ -38,9 +38,6 @@ class Rational:
 
         return Rational(new_n, new_d)
 
-    def __radd__(self, other):
-        return self.__add__(other)
-
     def __sub__(self, other):
         global new_d, new_n
         if isinstance(other, Rational):
@@ -51,9 +48,6 @@ class Rational:
             new_d = self.d
 
         return Rational(new_n,new_d)
-
-    def __rsub__(self, other):
-        return self.__sub__(other)
 
     def __mul__(self, other):
         global new_n, new_d
@@ -66,9 +60,6 @@ class Rational:
 
         return Rational(new_n,new_d)
 
-    def __rmul__(self, other):
-        return self.__mul__(other)
-
     def __truediv__(self, other):
         global new_n, new_d
         if isinstance(other, Rational):
@@ -79,9 +70,6 @@ class Rational:
             new_d = self.d * other
 
         return Rational(new_n,new_d)
-
-    def __rtruediv__(self, other):
-        return Rational(other * self.d, self.n)
 
     def __pow__(self, power, modulo=None):
         return Rational(self.n ** power, self.d ** power)
