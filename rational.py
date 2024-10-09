@@ -8,18 +8,18 @@ class Rational:
 
             self.n = n
             self.d = d
-            self._reduction()
-            self._sign()
+            self.reduction()
+            self.sign()
 
         except ZeroDivisionError:
             print('Нельзя делить на 0')
 
-    def _reduction(self):
+    def reduction(self):
         div = gcd(self.n,self.d)
         self.n //= div
         self.d //= div
 
-    def _sign(self):
+    def sign(self):
         if self.d < 0:
             self.n = -self.n
             self.d = -self.n
